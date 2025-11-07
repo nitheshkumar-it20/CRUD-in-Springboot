@@ -1,11 +1,11 @@
-package dev.codeio.helloworld;
+package dev.codeio.helloworld.service;
 
 import dev.codeio.helloworld.Models.Todo;
+import dev.codeio.helloworld.repository.ToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class ToDoService {
     @Autowired
-    private  ToDoRepository toDoRepository;
+    private ToDoRepository toDoRepository;
 
    public Todo createTodo(Todo todo){
        return toDoRepository.save(todo);

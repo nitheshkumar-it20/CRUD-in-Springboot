@@ -1,12 +1,12 @@
-package dev.codeio.helloworld;
+package dev.codeio.helloworld.controller;
 
 import dev.codeio.helloworld.Models.Todo;
+import dev.codeio.helloworld.service.ToDoService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class TodoController {
     @Autowired
-    private  ToDoService toDoService;
+    private ToDoService toDoService;
 
     @ApiResponses(value={
             @ApiResponse(responseCode = "200", description="Todos received "),
